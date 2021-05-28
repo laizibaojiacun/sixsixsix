@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Function.prototype.myCall=function(context){
+            if(context === null||context === undefined){
+                context = window;
+            }
+            if(typeof context != "object"&&typeof context != "function" ){
+                context = Object(context);
+            }
+            var arg = Array.form(arguments).slice(1);
+            var key = Date.now().toString(36);
+            context[key]=this;
+            eval("context[key]("+arg.toString()+")");
+            delete context[key];
+        }
+
+        function myNew(context){
+            var obj = {};
+            var arg = Array.form(arguments).slice(1);
+            var re = context.apply(obj,arg);
+            obj.__proto__=context.prototype;
+            if(typeof re ==="object"&&re !==null||typeof re ==="function"){
+                return re;
+            }
+            return obj;
+        }
+
+
+        for (var key in obj){
+            obj2[key] = obj[key]
+        }
+
+
+
+        function checkType(o){
+            return Object.prototype.toString.call(o).slice(8,-1).toLowerCase();
+        }
+        function deepClone(o){
+            if(checkType(o) === "object"){
+                var newObj = {}
+            }else if(checkType(o) ==="array"){
+                var newObj = []
+            }else{
+                return o;
+            }
+            for (var key in o){
+                newObj[key]=deepClone(o[key])
+            }
+            return newObj;
+        }
+
+        
+        function myInstanceof(A,B){
+            var _B = B.prototype;
+            var _A= A.__proto__;
+            while(_A){
+                if(_A ===_B){
+                    return true;
+                }
+                _A=A.__proto__;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

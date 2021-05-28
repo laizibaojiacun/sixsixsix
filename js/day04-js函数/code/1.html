@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 求整数1～ 100 的累加值， 但要求碰到个位为3的数则停止累加本次
+         var j=0;
+         for(var i =0;i<=100;i++){
+             if(i%10===3){
+                 continue;
+             }else{
+                 j=j+i;
+             }
+         }console.log(j);
+         // 求1 - 100 之间不能被7整除的整数的和（ 用continue）
+         var jj=0;
+         for(var i =0;i<=100;i++){
+             if(i%7===0){
+                 continue;
+             }else{
+                 jj=jj+i;
+             }
+         }console.log(jj);
+         // 求200 - 300 之间所有的奇数的和（ 用continue）
+         var jjj=0;
+         for(var i=200;i<=300;i++){
+             if(i%2===0){
+                 continue;
+             }else{
+                 jjj=i+jjj
+             }
+         }console.log(jjj);
+         // 求200 - 300 之间第一个能被7整数的数（break）
+         var jjjj=0;
+         for(var i =200;i<=300;i++){
+             if(i%7===0){
+                 console.log(i);
+                 break;
+             }
+         }
+    </script>
+</body>
+</html>

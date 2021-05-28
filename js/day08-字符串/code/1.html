@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // concat方法： 合并字符串 ！！！但是现在都使用加法(+)拼接，运行速度更快
+            // var str ="hello";
+            // var re = str.concat("world");
+            // console.log(str);
+            // console.log("hello"+"world");
+
+            /*  charAt(): 查询某个下标的字符是什么，如果查询不到返回空串
+                    ！！！可以直接使用下标代替，查询不到返回undefined
+            */
+           /* var str = "hello world";
+           console.log(str.charAt(2));//1
+           console.log(str.charAt(100));//查询某个下标的字符是什么，如果查询不到返回空串
+           console.log(str[2]);//1
+           console.log(str[100]);//undefined */
+
+           /* 
+            indexOf和lastIndexOf
+                查询某个字符串 在当前字符串中第一次出现的下标
+                !!!如果查询不到则返回-1
+           */
+    /*         var str = "hello world";//!!!!!!!!!注意 空格也代表一个下标
+            //         012345678910
+            console.log(str.indexOf('l'));//2
+            console.log(str.indexOf('llo'));//2
+            console.log(str.indexOf('l',5));9
+            console.log(str.indexOf('a',5));//-1
+            console.log(str.lastIndexOf('l'));//9 代表最后一次出现的下标 */
+
+            /* 
+                search:查询某个字符串第一次出现的位置
+                       可以书写正则表达式
+                       indexOf是search的底层，如果不牵扯到正则，请使用indexOf
+            */
+           /* var str = "hell2o world";
+           //         01234
+           // \d的规则是代表所有的数字
+           var reg =/\d/gi;
+           console.log(str.search(reg));//4 */
+
+
+
+           //match:找出所有符合条件的子字符串，组成一个数组
+
+          /*  var str ="邓伟16541545159伟邓15324987564";
+           var reg =/\d{11}/gi;//11代表数子个数 所以是11位数字
+           var re = str.match(reg);
+           console.log(re); */
+
+
+
+           //replace:字符串的替换
+
+          /*  var str = "a5154as5454";
+           //把所有的a替换为b (只能替换一个)
+           var re = str.replace("a","b");
+           console.log(re); */
+
+           /* var str = "a5154as5454";
+           var re = str.replace(/a/gi,"b");//替换所有a
+           console.log(re); */
+
+           var str ="深圳老邓头，宇宙好男人，就是有点丑";
+           var reg = /好|男|人|有|点|丑/gi;
+           var re = str.replace(reg,"*");
+           console.log(re);
+
+           var arr = [1, 3, 4, 65, 76, 5, 65, 34, 24, 56];
+           var att=arr[0];
+           arr.forEach(function(item,index){
+               if(att>item){
+                   att=item;
+               }
+           });
+           console.log(att);
+           var arr = [1, 3, 4, 65, 76, 5, 65, 34, 24, 56];
+           var ata=arr[0];
+           arr.forEach(function(item,index){
+               if(ata<item){
+                   ata=item;
+               }
+           });
+           console.log(ata)
+    </script>
+</body>
+</html>

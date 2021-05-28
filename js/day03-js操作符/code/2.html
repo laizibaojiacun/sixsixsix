@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个变量a = 5, 让a执行5次， 每次a加3。 然后弹出a最终的值
+        var a =5;
+        for(var i=0;i<5;i++){
+            a = a+3;
+        }console.log(a);
+        // 求1到9的和
+        var j= 0;
+        for(var i=0;i<10;i++){
+            j=j+i;
+        }console.log(j);
+        // 求1到100的和
+        var jj = 0;
+        for(var i=0;i<=100;i++){
+            jj=jj+i;
+        }console.log(jj);
+        // 求1 - 99 中的单数的和
+        var jjj = 0;
+        for(var i=0;i<100;i++){
+            if(i%2===1){
+                jjj=jjj+i;
+            }
+        }console.log(jjj);
+        // 求1 - 99 中是3的倍数的数字和
+        var jjjj = 0;
+        for(var i=0;i<100;i++){
+            if(i%3 ===0){
+                jjjj=jjjj+i;
+            }
+        }console.log(jjjj);
+        // 定义一个v， 当v等于0时， v进行3次自加1。 否则v进行4次自加2
+        var v=0;
+        if(v===0){
+            for(var i=0;i<3;i++){
+                v++;
+            }
+        }else{
+            for(var i=0;i<4;i++){
+                v=v+2;
+            }
+        }console.log(v);
+        // 定义v= 3; 对变量i由0到3进行遍历； 当i 等于2时， v自加2； 否则v自加3
+        var v = 3;
+        for(var i=0;i<4;i++){
+            if(i===2){
+                v=v+2;
+            }else{
+                v=v+3;
+            }
+        }console.log(v);
+    </script>
+</body>
+</html>
